@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    float countnegative=0,countpositive=0,countzero=0;
+    int n,i;
+    scanf("%d",&n);
+    float array[n];
+    for(i = 0;i<n;i++)
+    {
+        scanf("%f",&array[i]);
+    }
+    for(i = 0;i<n;i++)
+    {
+        if(array[i]<0)
+        {
+            countnegative++;
+        }
+         else if(array[i]>0)
+        {
+            countpositive++;
+        }
+        else
+        {
+            countzero++;
+        }
+    }
+    float positive = countpositive/n;
+    float negative = countnegative/n;
+    float zero = countzero/n;
+    printf("%f\n%f\n%f",positive,negative,zero);
+}
