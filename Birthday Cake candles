@@ -1,0 +1,84 @@
+#include<stdio.h>
+void merge(long long array[],long start,long mid,long end)
+{
+    long long size1 = mid - start+1;//size of the array with first half of the elements//
+    long long size2 = end - mid;//size of the array with second half of the elements//
+    long long array1[size1],array2[size2];//Declaring arrays of size 1 and size 2//
+    long long i,j;
+    i = 0;
+    j = 0;
+    int k = 0;
+    while(i<size1)
+    {
+        array1[i] = array[start+i];//storing the elements of array in array1//
+        i++;
+    }
+    while(j<size2)
+    {
+        array2[j] = array[mid + 1 + j];//storing the elements of array in array2//
+        j++;
+    }
+    i = 0;
+    j = 0;
+    while(i<size1 && j<size2)
+    {
+        if(array1[i]<=array2[j])//If the first element of array1 is less tham the first element of array2//
+        {
+            array[start+k] = array1[i];
+            i++;
+            k++;
+        }
+        else if(array1[i]>array2[j])
+        {
+            array[start+k] = array2[j];
+            j++;
+            k++;
+        }
+    }
+    while(i<size1)//enter the remaining elements of array1 and array2 into array//
+    {
+        array[start+k] = array1[i];
+        i++;
+        k++;
+    }
+    while(j<size2)
+    {
+        array[start+k] = array2[j];
+        j++;
+        k++;
+    }
+}
+void mergesort(long long array[],long long start ,long long end)
+{
+    if(start<end)//if start<end//
+    {
+        long long mid = (start + end)/2;
+        mergesort(array,start,mid);//mergesort for the left side array//
+        mergesort(array,mid+1,end);//mergesort for the right side array//
+        merge(array,start,mid,end);
+    }
+}
+int main()
+{
+   long long i,n,j,count = 0;
+   scanf("%lld",&n);
+   long long array[n];
+   for(i = 0;i<n;i++)
+   {
+       scanf("%lld",&array[i]);
+   }
+    mergesort(array,0,n-1);
+    count = 0;
+    for(j = n-1;j>=0;j--)
+    {
+        if(array[j] == array[j-1])
+        {
+            count++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    printf("%lld",count+1);
+}
