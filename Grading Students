@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    int array[n];
+    for(i = 0;i<n;i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    for(i = 0;i<n;i++)
+    {
+
+        if(array[i]>37)
+        {
+            if(((array[i]+2)%5 == 0) || ((array[i]+1)%5 == 0))
+            {
+                array[i] = array[i] + array[i]%5-1;
+            }
+        }  
+    }
+    for(i = 0;i<n;i++)
+    {
+        printf("%d\n",array[i]);
+    }
+}
