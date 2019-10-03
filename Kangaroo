@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    int x1,v1,x2,v2,d1,d2,i,j;
+    scanf("%d %d %d %d",&x1,&v1,&x2,&v2);
+    d1 = x1 + v1*i;
+    d2 = x2 + v2*j;
+    for(i = 1;i<10000;i++)
+    {
+        for(j = 1;j<10000;j++)
+        {
+            if(d1 == d2)
+            {
+                printf("YES");
+                break;
+            }
+            else
+            {
+                printf("NO");
+                break;
+            }
+        }
+        break;
+    }
+}
