@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+long long reverse(long long n)
+{
+    long long reverse=0, rem;    
+    while(n!=0)    
+    {    
+     rem=n%10;    
+     reverse=reverse*10+rem;    
+     n/=10;    
+    }    
+    return reverse;
+}
+int main()
+{
+    long long i,j,k,count = 0;
+    scanf("%lld %lld",&i,&j);
+    scanf("%lld",&k);
+    for(i;i<=j;i++)
+    {
+        if(((i-reverse(i))%k) == 0)
+        {
+            count++;
+        }
+    }
+    printf("%lld",count);
+
+}
