@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    int array[n][3];
+    for(i = 0;i<n;i++)
+    {
+        for(j = 0;j<3;j++)
+        {
+            scanf("%d ",&array[i][j]);
+        }
+    }
+    for(i = 0;i<n;i++)
+    {
+        if(abs(array[i][0]-array[i][2])<abs(array[i][1]-array[i][2]))
+        {
+            printf("Cat A\n");
+        }
+        else if(abs(array[i][0]-array[i][2])>abs(array[i][1]-array[i][2]))
+        {
+            printf("Cat B\n");
+        }
+        else if(abs(array[i][0]-array[i][2])==abs(array[i][1]-array[i][2]))
+        {
+            printf("Mouse C\n");
+        }
+    }
+}
