@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j,count = 0;
+    scanf("%d",&n);
+    int array[n];
+    for(i = 0;i<n;i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    for(i = 0;i<n;i++)
+    {
+        for(j = i+1;j<n;j++)
+        {
+            if(array[i] == array[j])
+            {
+                count++;
+                array[j] = -i;//To avoid counting the element in another pair(just replacing with some number which wont come again in the array)
+                break;
+            }
+        }
+    }
+    printf("%d",count);
+}   
