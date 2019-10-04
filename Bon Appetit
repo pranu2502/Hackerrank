@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    long long n,k,i,total = 0,b;
+    scanf("%lld %lld",&n,&k);
+    long long bill[n];
+    for(i = 0;i<n;i++)
+    {
+        scanf("%lld ",&bill[i]);
+    }
+    scanf("%lld",&b);
+    for(i = 0;i<n;i++)
+    {
+        total = total + bill[i];
+    }
+    if((total - bill[k])/2 == b )
+    {
+        printf("Bon Appetit");
+    }
+    else
+    {
+        printf("%lld",abs((total - bill[k])/2 - b));
+    }
+}
