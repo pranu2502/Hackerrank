@@ -3,7 +3,7 @@ int main()
 {
     int x1,v1,x2,v2,d1,d2,i,count = 0;
     scanf("%d %d %d %d",&x1,&v1,&x2,&v2);
-    
+    //d1 and d2 give positions of both the kangaroos at a given time
     for(i = 1;i<10000;i++)
     {
         d1 = x1 + v1*i;
