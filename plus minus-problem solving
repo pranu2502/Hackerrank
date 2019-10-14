@@ -1,11 +1,11 @@
 #include<stdio.h>
 int main()
 {
-    float countnegative=0,countpositive=0,countzero=0;
-    int n,i;
-    scanf("%d",&n);
-    float array[n];
-    for(i = 0;i<n;i++)
+    float countnegative=0,countpositive=0,countzero=0;  //initialising  global variables
+    int n,i;                                            //inttialising integer variables n and i
+    scanf("%d",&n);                                     //getting input from user
+    float array[n];                                     //initialisng array
+    for(i = 0;i<n;i++)                                  //scanning array from input
     {
         scanf("%f",&array[i]);
     }
