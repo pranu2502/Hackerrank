@@ -1,30 +1,37 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 int main()
 {
-    int n,i,j;
+    int n;
     scanf("%d",&n);
-    int array[n][3];
-    for(i = 0;i<n;i++)
+    while(n > 0)
     {
-        for(j = 0;j<3;j++)
+        int x,y,z;
+        scanf("%d %d %d",&x,&y,&z);
+        int dist_a = abs(z - x);
+        int dist_b = abs(y - z);
+        if(dist_a < dist_b)
         {
-            scanf("%d ",&array[i][j]);
+            printf("Cat A");
         }
+        else if(dist_a > dist_b)
+        {
+            printf("Cat B");
+        }
+        else
+        {
+            printf("Mouse C");
+        }
+        printf("\n");
+        n--;
     }
-    for(i = 0;i<n;i++)
-    {
-        if(abs(array[i][0]-array[i][2])<abs(array[i][1]-array[i][2]))
-        {
-            printf("Cat A\n");
-        }
-        else if(abs(array[i][0]-array[i][2])>abs(array[i][1]-array[i][2]))
-        {
-            printf("Cat B\n");
-        }
-        else if(abs(array[i][0]-array[i][2])==abs(array[i][1]-array[i][2]))
-        {
-            printf("Mouse C\n");
-        }
-    }
+    return 0;
 }
