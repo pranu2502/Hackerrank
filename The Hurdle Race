@@ -1,4 +1,12 @@
 #include<stdio.h>
+
+void swap(int *x , int *y){
+    int t = *x;
+    *x = *y;
+    *y=t;
+}
+
+
 int main()
 {
     int n,k,i,j,temp,p;
@@ -14,9 +22,7 @@ int main()
         {
             if(array[j]>array[j+1])
             {
-                temp = array[j+1];
-                array[j+1] = array[j];
-                array[j] = temp;
+                swap(&array[j] , &array[j+1]);
             }
         }
     }
