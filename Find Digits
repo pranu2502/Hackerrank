@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    long long i,t,temp,j,count = 0,n;
+    scanf("%lld",&t);
+    long long array[t];
+    for(i = 0;i<t;i++)
+    {
+        scanf("%lld",&array[i]);
+    }
+    for(j = 0;j<t;j++)
+    {
+        n = array[j];
+        while(n!= 0)
+        {
+            temp = n%10;
+            if(temp!=0)
+            {
+                if(array[j]%temp == 0)
+                {
+                    count++;
+                }
+               
+            }
+             n = n/10;
+        }
+        printf("%lld\n",count);
+        count = 0;
+    }
+}
